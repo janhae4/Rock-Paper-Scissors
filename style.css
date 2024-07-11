@@ -1,0 +1,121 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Montserrat';
+    color: rgb(154, 91, 255)
+}
+
+.container {
+    width: 45rem;
+    height: 30rem;
+    margin: 10rem auto;
+    padding: 10rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.164);
+}
+
+i {
+    font-size: 5rem;
+}
+
+h2 {
+    position: relative;
+    display: block;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1rem;
+    letter-spacing: 0px;
+    margin-top: 1rem;
+}
+
+
+.game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+
+.game  i {
+    font-size: 8rem;
+}
+
+.p1 i {
+    transform: rotate(90deg);
+    /* animation: usershake  1s linear infinite; */
+}
+.p2 i {
+    transform: rotate(-90deg) rotateY(180deg);
+    /* animation: cpushake  1s linear infinite; */
+}
+
+.p1 .active {
+    animation: usershake  .2s linear infinite;
+}
+.p2 .active {
+    animation: cpushake  .2s linear infinite;
+}
+
+.p1 .fa-hand-scissors {
+    transform: rotate(180deg) rotateX(180deg);
+}
+.p2 .fa-hand-scissors {
+    transform: rotate(-180deg) rotate(180deg);
+}
+
+.choose {
+    display: flex;
+    gap: 5rem;
+    text-align: center;
+    cursor: pointer;
+    color: rgba(154, 91, 255, 0.459)
+}
+
+.choose p{
+    margin-top: 1.2rem;
+}
+
+.choose .scissor p {
+    margin-left: 1.5rem;
+}
+
+.choose .icon:hover {
+    color: rgb(154, 91, 255);
+    transform: scale(1.1);
+}
+
+@keyframes usershake {
+    0% {
+        transform: rotateZ(60deg);
+    }
+
+    50% {
+        transform: rotateZ(75deg);
+    }
+
+    100% {
+        transform: rotateZ(60deg);
+    }
+}
+@keyframes cpushake {
+    0% {
+        transform: rotateZ(-60deg) rotateY(180deg);
+    }
+
+    50% {
+        transform: rotateZ(-75deg) rotateY(180deg);
+    }
+
+    100% {
+        transform: rotateZ(-60deg) rotateY(180deg);
+    }
+}
